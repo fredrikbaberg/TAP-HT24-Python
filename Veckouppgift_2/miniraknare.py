@@ -31,7 +31,7 @@ if(tal_1 == tal_2 or tal_1 == tal_3 or tal_2 == tal_3):
 
 # 4. Tala om vilket som är det mellersta talet. Alla tal måste vara olika.
 if(alla_olika):
-    # Hitta minsta talet.
+    # Hitta minsta talet. Använder en lista (egentligen nästa lektion).
     minsta_tal = tal_1
     for tal in [tal_2, tal_3]:
         if tal < minsta_tal:
