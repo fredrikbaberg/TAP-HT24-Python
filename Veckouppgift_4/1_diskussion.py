@@ -71,7 +71,7 @@ except:
     print("Misslyckades")
 
 # 1g.
-gissning_1g = "1g. Gissning: Returnerar True om typen för argumentet är flyttal eller heltal, annars False."
+gissning_1g = "1g. Gissning: Returnerar True om typen för argumentet är flyttal eller heltal, annars False. Kan förenklas med isinstance(x, (int, float))."
 print(gissning_1g)
 try:
     def is_number(x):
@@ -105,13 +105,13 @@ except:
 gissning_1i = [
     "1i.",
     "\t 1. Gissning: Hitta minsta talet i en lista.",
-    "\t 2. Gissning: Förväntat resultat: '-11', '' (kommer vara 0), '100' (kommer vara 0)"
+    "\t 2. Gissning: Förväntat resultat: '-111', '' (kommer vara 0), '100' (kommer vara 0)"
     "\t 3. Gissning: Byt 'counter = 0' till 'counter = numbers[0] if len(numbers) > 0 else None"
 ]
 print('\n'.join(gissning_1i))
 try:
     def find_min(numbers):
-        counter = 0
+        counter = 0 # numbers[0] if len(numbers) > 0 else None
         for item in numbers:
             if item < counter:
                 counter = item
