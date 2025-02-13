@@ -9,6 +9,7 @@
 # Tips 2! Du kan använda AI för att skapa realistisk testdata. Prova till att börja med:
 # "Skapa testdata för 10 produkter till en webbshop, som säljer verktyg. Visa datan i en tabell. Varje produkt ska ha namn, pris och ett unikt id."
 
+# Klass för produkt. Har egenskaperna id, namn, pris.
 class Product():
     def __init__(self, id, name, price):
         self.__id = id
@@ -18,12 +19,13 @@ class Product():
     def __str__(self):
         return f"{self.__id}. {self.__name} ({self.__price})"
 
-# Beställningar. Har ett ID och en lista med kundvagnar.
+# Klass för beställningar. Har egenskaperna id och en lista med kundvagnar.
 class Order():
     def __init__(self, id):
         self.__shopping_carts = []
         self.__id = id
 
+    # Kan lägga till en kundvagn i beställningar.
     def add_shopping_cart(self, cart):
         self.__shopping_carts.append(cart)
 
@@ -31,12 +33,13 @@ class Order():
     def shopping_carts(self):
         return self.__shopping_carts
 
-# Kundvagn. Har ett ID och en lista med produkter i kundvagnen.
+# Klass för kundvagn. Har egenskaperna id och produkter.
 class ShoppingCart():
     def __init__(self, id):
         self.__id = id
         self.__products = []
 
+    # Kan lägga till en produkt i kundvagnen.
     def add_product(self, product):
         self.__products.append(product)
 

@@ -3,18 +3,20 @@ from Veckouppgift_6.src.webbshop import Order, Product, ShoppingCart
 
 
 def test_webbshop__skapa_produkt():
-    # Skapa en produkt med ID, namn och pris
+    # Skapa en produkt med ID, namn och pris.
     expected = "1. Processor (2999)"
     actual = Product(id=1, name="Processor", price=2999).__str__()
     assert actual == expected
 
 def test_webbshop__create_order():
+    # Skapa en order med kundvagn.
     order = Order(id=1)
     cart = None
     order.add_shopping_cart(cart)
     assert order.shopping_carts == [None]
 
 def test_webbshop__create_shopping_cart():
+    # Skapar en kundvagn med 10 produkter.
     cart = ShoppingCart(id=1)
     # Skapa 10 produkter
     products = [
@@ -33,5 +35,5 @@ def test_webbshop__create_shopping_cart():
     for product in products:
         cart.add_product(product)
 
-    # Kontrollera att kundvagnen innehåller alla 10 produkter.
+    # Kontrollera att kundvagnen innehåller 10 produkter.
     assert len(cart.products) == 10
